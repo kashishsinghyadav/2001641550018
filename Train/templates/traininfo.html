@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Info</title>
+    <style>
+        /* Add some simple CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+        .info-section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Train Information</h1>
+        <button class="button" onclick="showSleeperInfo()">Sleeper Class</button>
+        <button class="button" onclick="showACInfo()">AC Class</button>
+        
+        <div id="sleeperInfo" class="info-section">
+            <h2>Sleeper Class Information</h2>
+            <!-- Add sleeper class information here -->
+            <p>This is the information for sleeper class.</p>
+        </div>
+        
+        <div id="acInfo" class="info-section">
+            <h2>AC Class Information</h2>
+            <!-- Add AC class information here -->
+            <p>This is the information for AC class.</p>
+        </div>
+    </div>
+
+    <script>
+        function showSleeperInfo() {
+            document.getElementById('sleeperInfo').classList.add('active');
+            document.getElementById('acInfo').classList.remove('active');
+        }
+
+        function showACInfo() {
+            document.getElementById('acInfo').classList.add('active');
+            document.getElementById('sleeperInfo').classList.remove('active');
+        }
+    </script>
+</body>
+</html>

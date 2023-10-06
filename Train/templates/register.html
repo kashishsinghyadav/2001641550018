@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+</head>
+<body>
+    <h2 style="text-align: center;">Joe Dae Railway server</h2>
+    <div style="width: 50%; margin: 0 auto;">
+        <form method="post" style="border: 1px solid #ccc; padding: 20px;">
+            {% csrf_token %}
+            <label for="companyname">Company Name:</label>
+            <input type="text" id="companyname" name="companyname" maxlength="12" style="width: 100%; margin-bottom: 10px;"><br>
+            
+            <label for="ownername">Owner Name:</label>
+            <input type="text" id="ownername" name="ownername" maxlength="100" style="width: 100%; margin-bottom: 10px;"><br>
+            
+            <label for="rollno">Roll No:</label>
+            <input type="text" id="rollno" name="rollno" maxlength="10" style="width: 100%; margin-bottom: 10px;"><br>
+            
+            <label for="owneremail">Owner Email:</label>
+            <input type="email" id="owneremail" name="owneremail" style="width: 100%; margin-bottom: 10px;"><br>
+            
+            <label for="accesscode">Access Code:</label>
+            <input type="text" id="accesscode" name="accesscode" maxlength="20" style="width: 100%; margin-bottom: 10px;"><br>
+            
+            <button type="submit" style="background-color: #007bff; color: #fff; padding: 10px 20px; border: none; cursor: pointer;">Register</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleeper Train Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .info-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .info-box p {
+            margin: 5px 0;
+        }
+
+        .not-found {
+            text-align: center;
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sleeper Train Information</h1>
+        {% if sleeper_train %}
+            <div class="info-box">
+                <p><strong>Train Name:</strong> {{ sleeper_train.trainName }}</p>
+                <p><strong>Train Number:</strong> {{ sleeper_train.trainNumber }}</p>
+                <p><strong>Departure Time:</strong> {{ sleeper_train.departureTimeHours }}:{{ sleeper_train.departureTimeMinutes }}:{{ sleeper_train.departureTimeSeconds }}</p>
+                <p><strong>Seats Available (Sleeper):</strong> {{ sleeper_train.seatsAvailableSleeper }}</p>
+                <p><strong>Seats Available (AC):</strong> {{ sleeper_train.seatsAvailableAC }}</p>
+                <p><strong>Price (Sleeper):</strong> ${{ sleeper_train.priceSleeper }}</p>
+                <p><strong>Price (AC):</strong> ${{ sleeper_train.priceAC }}</p>
+                <p><strong>Delayed By:</strong> {{ sleeper_train.delayedBy }} minutes</p>
+            </div>
+        {% else %}
+            <p class="not-found">Train information not found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
